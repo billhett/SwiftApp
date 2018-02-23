@@ -20,9 +20,9 @@ class ViewController: UIViewController {
         self.view.backgroundColor = UIColor.gray
         tapCount = tapCount + 1
         print("tapcount is \(tapCount)")
-        if tapCount >= 10 {
+        if tapCount >= 20 {
             theLabel.textColor = UIColor.red
-            theLabel.text = "Over 10 presses!"
+            theLabel.text = "Over 20 presses!"
         }
     }
     
