@@ -11,24 +11,25 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var theLabel: UILabel!
-
-    var tapCount = 0
+    @IBOutlet weak var text1: UITextField!
+    @IBOutlet weak var text2: UITextField!
+    
+    //var tapCount = 0
     
     @IBAction func buttonTapped(_ sender: Any) {
         print("button pressed")
-        theLabel.text = "Hello there!"
         self.view.backgroundColor = UIColor.gray
-        tapCount = tapCount + 1
-        print("tapcount is \(tapCount)")
-        if tapCount >= 20 {
-            theLabel.textColor = UIColor.red
-            theLabel.text = "Over 20 presses!"
-        }
+        print(text1.text!)
+        print(text2.text!)
+        print(text1)
+        theLabel.text = "Sum is \(Double(text1.text!)! + Double(text2.text!)!)"
     }
     
     @IBAction func meTooPressed(_ sender: Any) {
-        theLabel.text = "Buttons Are Cool"
-        self.view.backgroundColor = UIColor.blue
+        //theLabel.text = "Buttons Are Cool"
+        self.view.backgroundColor = UIColor.darkGray
+        theLabel.text = "Product is \(Double(text1.text!)! * Double(text2.text!)!)"
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
