@@ -9,12 +9,12 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    
     @IBOutlet weak var theLabel: UILabel!
     @IBOutlet weak var text1: UITextField!
     @IBOutlet weak var text2: UITextField!
     
-    //var tapCount = 0
+    var tapCount = 0
     
     @IBAction func buttonTapped(_ sender: Any) {
         print("button pressed")
@@ -22,7 +22,16 @@ class ViewController: UIViewController {
         print(text1.text!)
         print(text2.text!)
         print(text1)
-        theLabel.text = "Sum is \(Double(text1.text!)! + Double(text2.text!)!)"
+        var addition = true
+        if tapCount % 2 == 0 {
+            addition = false
+        }
+        if addition {
+            theLabel.text = "Sum is \(Double(text1.text!)! + Double(text2.text!)!)"
+        } else {
+            theLabel.text = "Difference is \(Double(text1.text!)! - Double(text2.text!)!)"
+        }
+        tapCount += 1
     }
     
     @IBAction func meTooPressed(_ sender: Any) {
@@ -37,12 +46,12 @@ class ViewController: UIViewController {
         //self.view.backgroundColor = UIColor.red
         
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 
